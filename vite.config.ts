@@ -35,7 +35,7 @@ export default defineConfig({
   server: {
     host: "localhost",
     open: true,
-    port: 3333,
+    port: 3000,
     hmr: { overlay: false },
     https: false,
   },
@@ -71,7 +71,7 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 400,
-    brotliSize: false
+    brotliSize: false,
   },
 })
 
