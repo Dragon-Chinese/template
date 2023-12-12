@@ -33,7 +33,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: "devfe.doublefs.com",
+    host: "localhost",
     open: true,
     port: 3333,
     hmr: { overlay: false },

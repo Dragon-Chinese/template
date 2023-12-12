@@ -1,10 +1,28 @@
-.el-header {
-  background-color: rgba(0,0,0,0.1);
+.header {
+  width: 100%;
+  height: 150px;
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 10px;
-  .shrink{
-      margin-right: 10px;
+  justify-content: space-around;
+  .title_left{
+      font-size: 32px;
+      font-weight: bold;
+      color: #1E50AE;
+  }
+  .title_right {
+    display: flex;
+    .tel {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      span:nth-child(1) {
+        font-size: 16px;
+      }
+      span:nth-child(2) {
+        font-size: 24px;
+        
+        color: #1E50AE;
+      }
+    }
   }
 }

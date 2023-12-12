@@ -15,19 +15,9 @@ import { useStore } from "vuex";
 export default defineComponent({
     name: 'ContainerHeader',
     setup() {
-        const store = useStore();
-        let isCollapse = computed(() => store.getters.getCollapse)
-        function shrink() {
-            store.commit('setCollapse', !isCollapse.value)
-        }
 
         return () => (
-            <>
-                <el-icon onClick={shrink} class='shrink' size={20} color='#ff9000'>
-                    {isCollapse.value ? <Expand></Expand> : <Fold></Fold>}
-                </el-icon>
-                <span>XXX,欢迎您</span>
-            </>
+            <></>
         )
     }
 })
