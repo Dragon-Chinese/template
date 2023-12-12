@@ -35,11 +35,6 @@ import nhz3 from "@/assets/nhz3.png";
 import nhz4 from "@/assets/nhz4.png";
 import nhz5 from "@/assets/nhz5.png";
 import nhz6 from "@/assets/nhz6.png";
-
-import { nextTick, onMounted } from 'vue';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { Swiper } from 'swiper';
-
 import jzl1 from "@/assets/jzl1.png";
 import jzl2 from "@/assets/jzl2.png";
 import jzl3 from "@/assets/jzl3.png";
@@ -47,6 +42,9 @@ import jzl4 from "@/assets/jzl4.png";
 import jzl5 from "@/assets/jzl5.png";
 import jzl6 from "@/assets/jzl6.png";
 import search from "@/assets/search.png";
+import { nextTick, onMounted } from 'vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper } from 'swiper';
 Swiper.use([Autoplay, Navigation]);
 // 安装 Swiper 模块
 
