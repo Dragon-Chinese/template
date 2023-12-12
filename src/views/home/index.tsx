@@ -11,7 +11,8 @@ import './index.less'
 import { defineComponent, KeepAlive, ref, watch, reactive } from "vue-demi";
 import { useRouter } from "vue-router";
 import { getMenuTree, checkFull, versionUpdated } from "@/utils/index";
-import { Swiper } from 'swiper';
+import 'swiper/swiper-bundle.css';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Autoplay, Pagination, Navigation, Scrollbar } from 'swiper'
 import 'swiper/css/pagination' // 轮播图底面的小圆点
 import 'swiper/css/navigation' // 轮播图两边的左右箭头
@@ -25,11 +26,20 @@ import gj from "@/assets/gj.jpg";
 import gwmb from "@/assets/gwmb.png";
 import gwnjj from "@/assets/gwnjj.jpg";
 import banner from "@/assets/banner.png";
-import { onMounted } from 'vue';
+import nh from "@/assets/nh.png";
+import gz from "@/assets/gz.png";
+import { nextTick, onMounted } from 'vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper } from 'swiper';
+Swiper.use([Autoplay, Navigation]);
+// 安装 Swiper 模块
 
 export default defineComponent({
     name: 'home',
     setup() {
+        
+        const swiperInstance = ref();
+
         const router = useRouter();
         let meta = ref({});
         let verUpdate: any = ref(false);
@@ -91,24 +101,23 @@ export default defineComponent({
             verUpdate.value = await versionUpdated();
         }
 
+        // 在组件挂载时初始化 Swiper
         onMounted(() => {
-            var mySwiper = new Swiper('.swiper', {
+            // 这里的 swiperOptions 是 Swiper 的配置选项，根据你的需求进行配置
+            const swiperOptions = {
+                loop: true,
                 autoplay: {
-                    disableOnInteraction: false,
-                    delay: 3000 //3秒切换一次
-                },//可选选项，自动滑动
-                // loop: true,
-                // navigation: {
-                //     nextEl: '.swiper-button-next',
-                //     prevEl: '.swiper-button-prev',
-                // },
-            })
-
-            //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
-            new Swiper('.swiper')
-            // var mySwiper = document.querySelector('.swiper').swiper
-            // mySwiper.slideNext();
-        })
+                  delay: 3000,
+                  disableOnInteraction: false,
+                },
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }
+              };
+            
+              swiperInstance.value = new Swiper('.swiper-container', swiperOptions);
+        });
         // 点击切换图片
         const changeImg = (itemImg: any) => {
             topImgSrc.value = itemImg;
@@ -156,15 +165,27 @@ export default defineComponent({
                     </div>
                     <div class='wrapper'>
                         <div class='content'>
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">slider1</div>
-                                    <div class="swiper-slide">slider2</div>
-                                    <div class="swiper-slide">slider3</div>
+                        <div class="swiper-container banner_top">
+                            <div class="swiper-wrapper">
+                            <div class="swiper-slide first">
+                                <div class={'text'}>
+                                    <p>品质保证 诚信经营 专业定制</p>
+                                    <img src={nh} alt="" />
+                                    <p>细心服务 厂家直销 贴心售后</p>
                                 </div>
-                                {/* <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div> */}
                             </div>
+                            <div class="swiper-slide two">
+                                <div class={'text'}>
+                                    <p>我们专注于研发、生产</p>
+                                    <img src={gz} alt="" />
+                                    <span>降低原料中的杂质含量，有利于改善荷重软化温度及高温蠕变性能</span>
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="swiper-button-next btn_banner"></div>
+                            <div class="swiper-button-prev btn_banner"></div>
+                        </div>
                             <div class="materialList">
                                 <div class="materialTab">
                                     <span>焦炉维修材料</span>

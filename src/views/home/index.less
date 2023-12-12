@@ -22,6 +22,108 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  .banner_top {
+    height: 800px;
+    position: relative;
+    .btn_banner {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      margin-top: -35.5px;
+      // left: 40px;
+    }
+    .btn_banner:after {
+      color: #fff;
+    }
+    // .swiper-button-next {
+    //   right: 40px;
+    // }
+    .swiper-button-prev {
+      left: 40px;
+    }
+    .swiper-button-next {
+      right: 40px;
+    }
+    .swiper-wrapper {
+      height: 100%;
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+      }
+      .swiper-slide.first {
+        background: url('../../assets/bg1.png');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        .text {
+          width: 1200px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            p {
+              color: rgb(255, 255, 255);
+              font-size: 24px;
+              background-color: transparent;
+              position: absolute;
+              top: 227px;
+              left: 198px
+            }
+            p:nth-of-type(2) {
+              top:480px;
+              left: 197px;
+            }
+            img {
+              position: absolute;
+              top: 301px;
+              left: 140px;
+              height: 261px;
+              width: 416px;
+            }
+        }
+      }
+      .swiper-slide.two {
+        background: url('../../assets/bg2.png');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        .text {
+          width: 1200px;
+          display: flex;
+            flex-direction: column;
+            position: relative;
+          p {
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 230px;
+            left: 12px;
+            width: 345px;
+          }
+          img {
+            position: absolute;
+            top: 314px;
+            left: 12px;
+            width: 566px;
+          }
+          span {
+            position: absolute;
+            height: 45px;
+            top: 424px;
+            left: 12px;
+            width: 550px;
+            background: #1e50ae;
+            font-size: 16px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
   .wrapper {
     width: 100%;
     background-color: #fff;

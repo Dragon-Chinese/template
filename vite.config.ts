@@ -37,7 +37,7 @@ export default defineConfig({
     open: true,
     port: 3333,
     hmr: { overlay: false },
-    https: true,
+    https: false,
   },
   resolve: {
     alias: {
