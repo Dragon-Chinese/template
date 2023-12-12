@@ -106,8 +106,8 @@ export default defineComponent({
 
             //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
             new Swiper('.swiper')
-            var mySwiper = document.querySelector('.swiper').swiper
-            mySwiper.slideNext();
+            // var mySwiper = document.querySelector('.swiper').swiper
+            // mySwiper.slideNext();
         })
         // 点击切换图片
         const changeImg = (itemImg: any) => {
