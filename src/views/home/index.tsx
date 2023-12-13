@@ -199,8 +199,14 @@ export default defineComponent({
 
         // 在组件挂载时初始化 Swiper
         onMounted(() => {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const scrollContainer = document.querySelector('.el-container .el-container');
-            scrollTopPx.value = scrollContainer ? scrollContainer.clientHeight - 944 : 0
+            if(isMobile) {
+                scrollTopPx.value = 99999999
+            }else {
+                scrollTopPx.value = scrollContainer ? scrollContainer.clientHeight - 944 : 0
+            }
+            
             console.log(scrollTopPx.value)
             console.log("Scrolling event triggered!", scrollContainer);
             scrollContainer?.addEventListener("scroll", (event) => {
