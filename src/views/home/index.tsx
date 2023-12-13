@@ -51,7 +51,7 @@ Swiper.use([Autoplay, Navigation]);
 export default defineComponent({
     name: 'home',
     setup() {
-        
+
         const swiperInstance = ref();
 
         const router = useRouter();
@@ -95,91 +95,91 @@ export default defineComponent({
                 id: 6
             }
         ]);
-                // 耐火砖图片
-                const refractoryBricks = ref([
-                    {
-                        src: nhz1,
-                        title: '耐火砖1580℃',
-                        id: 0
-                    },
-                    {
-                        src: nhz2,
-                        title: '耐火砖1580℃B2',
-                        id: 1
-                    },
-                    {
-                        src: nhz3,
-                        title: '耐火砖1770℃',
-                        id: 2
-                    },
-                    {
-                        src: nhz4,
-                        title: '耐火砖1770℃k2',
-                        id: 3
-                    },
-                    {
-                        src: nhz5,
-                        title: '耐火砖2000℃',
-                        id: 4
-                    },
-                    {
-                        src: nhz6,
-                        title: '耐火砖2200℃',
-                        id: 5
-                    }
-                ]);
-                // 浇注料图片
-                const castableMaterial = ref([
-                    {
-                        src: jzl1,
-                        title: '建材行业用浇注料K2',
-                        id: 0
-                    },
-                    {
-                        src: jzl2,
-                        title: '建材行业用浇注料K3',
-                        id: 1
-                    },
-                    {
-                        src: jzl3,
-                        title: '石化行业用浇注料S1',
-                        id: 2
-                    },
-                    {
-                        src: jzl4,
-                        title: '石化行业用浇注料s2',
-                        id: 3
-                    },
-                    {
-                        src: jzl5,
-                        title: '冶金行业用浇注料y1',
-                        id: 4
-                    },
-                    {
-                        src: jzl6,
-                        title: '有色金属行业用浇注料B1',
-                        id: 5
-                    }
-                ]);
-                // 焦炉维修材料展示大图
-                const topImgSrc = ref({
-                    src: tch,
-                    title: '陶瓷焊补料',
-                    id: 0
-                });
-                // 焦炉维修材料展示大图
-                const activedImgSrc = ref({
-                    src: '',
-                    title: '',
-                    id: 0
-                });
-                // 左右切换按钮是否显示
-                const isShowNavigationBtn = ref(false);
-        
-                watch(() => [router.currentRoute.value, router.currentRoute.value.meta], (val) => {
-                    meta.value = val;
-                    hasVersionUpdated()
-                })
+        // 耐火砖图片
+        const refractoryBricks = ref([
+            {
+                src: nhz1,
+                title: '耐火砖1580℃',
+                id: 0
+            },
+            {
+                src: nhz2,
+                title: '耐火砖1580℃B2',
+                id: 1
+            },
+            {
+                src: nhz3,
+                title: '耐火砖1770℃',
+                id: 2
+            },
+            {
+                src: nhz4,
+                title: '耐火砖1770℃k2',
+                id: 3
+            },
+            {
+                src: nhz5,
+                title: '耐火砖2000℃',
+                id: 4
+            },
+            {
+                src: nhz6,
+                title: '耐火砖2200℃',
+                id: 5
+            }
+        ]);
+        // 浇注料图片
+        const castableMaterial = ref([
+            {
+                src: jzl1,
+                title: '建材行业用浇注料K2',
+                id: 0
+            },
+            {
+                src: jzl2,
+                title: '建材行业用浇注料K3',
+                id: 1
+            },
+            {
+                src: jzl3,
+                title: '石化行业用浇注料S1',
+                id: 2
+            },
+            {
+                src: jzl4,
+                title: '石化行业用浇注料s2',
+                id: 3
+            },
+            {
+                src: jzl5,
+                title: '冶金行业用浇注料y1',
+                id: 4
+            },
+            {
+                src: jzl6,
+                title: '有色金属行业用浇注料B1',
+                id: 5
+            }
+        ]);
+        // 焦炉维修材料展示大图
+        const topImgSrc = ref({
+            src: tch,
+            title: '陶瓷焊补料',
+            id: 0
+        });
+        // 焦炉维修材料展示大图
+        const activedImgSrc = ref({
+            src: '',
+            title: '',
+            id: 0
+        });
+        // 左右切换按钮是否显示
+        const isShowNavigationBtn = ref(false);
+
+        watch(() => [router.currentRoute.value, router.currentRoute.value.meta], (val) => {
+            meta.value = val;
+            hasVersionUpdated()
+        })
 
 
 
@@ -193,16 +193,16 @@ export default defineComponent({
             const swiperOptions = {
                 loop: true,
                 autoplay: {
-                  delay: 3000,
-                  disableOnInteraction: false,
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
                 navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 }
-              };
-            
-              swiperInstance.value = new Swiper('.swiper-container', swiperOptions);
+            };
+
+            swiperInstance.value = new Swiper('.swiper-container', swiperOptions);
         });
         // 点击切换图片
         const changeImg = (itemImg: any, type: string) => {
@@ -269,174 +269,204 @@ export default defineComponent({
 
         return () => (
             <el-container class='el-container'>
-            <el-container>
-                <div class='wrapper'>
-                    <div class='sitetips-title'>您的网站试用资格已过期。</div>
-                    <div class="header-title">
-                        <span class="title-left">临汾鑫达耐火材料有限公司</span>
-                        <div class="title-right">
-                            <img src={tel} alt="" />
-                            <span class="tel">
-                                <span>咨询热线</span>
-                                <span>15333071118</span>
-                            </span>
+                <el-container>
+                    <div class='wrapper'>
+                        <div class='sitetips-title'>您的网站试用资格已过期。</div>
+                        <div class="header-title">
+                            <span class="title-left">临汾鑫达耐火材料有限公司</span>
+                            <div class="title-right">
+                                <img src={tel} alt="" />
+                                <span class="tel">
+                                    <span>咨询热线</span>
+                                    <span>15333071118</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class='nav-tab'>
+                            <p class="tab">
+                                <span>首页</span>
+                            </p>
                         </div>
                     </div>
-                    <div class='nav-tab'>
-                        <p class="tab">
-                            <span>首页</span>
-                        </p>
-                    </div>
-                </div>
-                <div class='wrapper'>
-                    <div class='content'>
-                    <div class="swiper-container banner_top">
-                            <div class="swiper-wrapper">
-                            <div class="swiper-slide first">
-                                <div class={'text'}>
-                                    <p>品质保证 诚信经营 专业定制</p>
-                                    <img src={nh} alt="" />
-                                    <p>细心服务 厂家直销 贴心售后</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide two">
-                                <div class={'text'}>
-                                    <p>我们专注于研发、生产</p>
-                                    <img src={gz} alt="" />
-                                    <span>降低原料中的杂质含量，有利于改善荷重软化温度及高温蠕变性能</span>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div class="swiper-button-next btn_banner"></div>
-                            <div class="swiper-button-prev btn_banner"></div>
-                        </div>
-                        <div class="materialList">
-                            <div class="materialTab">
-                                <span>焦炉维修材料</span>
-                                <span>陶瓷焊补料</span>
-                                <span>半干喷补料</span>
-                                <span>空压密封料</span>
-                                <span>焦炉砌筑料</span>
-                                <span>灌浆料</span>
-                                <span>高温抹补料</span>
-                                <span>高温粘结剂</span>
-                            </div>
-                            <div class="materialDetail" onMouseover={changeMouseover} onMouseout={changeMouseout}>
-                                <div class="topImg">
-                                    <img src={topImgSrc.value.src} alt="" />
-                                    <p class="title">{topImgSrc.value.title}</p>
-                                    <div class={!isShowNavigationBtn.value ? 'noneBtn' : 'navigationBtn'}>
-                                        <div class="prev" onClick={() => changePrev(topImgSrc.value.src)}>{'<'}</div>
-                                        <div class="next" onClick={() => changeNext(topImgSrc.value.src)}>{'>'}</div>
+                    <div class='wrapper'>
+                        <div class='content'>
+                            <div class="swiper-container banner_top">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide first">
+                                        <div class={'text'}>
+                                            <p>品质保证 诚信经营 专业定制</p>
+                                            <img src={nh} alt="" />
+                                            <p>细心服务 厂家直销 贴心售后</p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide two">
+                                        <div class={'text'}>
+                                            <p>我们专注于研发、生产</p>
+                                            <img src={gz} alt="" />
+                                            <span>降低原料中的杂质含量，有利于改善荷重软化温度及高温蠕变性能</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="bottomImg">
+
+                                <div class="swiper-button-next btn_banner"></div>
+                                <div class="swiper-button-prev btn_banner"></div>
+                            </div>
+                            <div class="materialList">
+                                <div class="materialTab">
+                                    <span>焦炉维修材料</span>
+                                    <span>陶瓷焊补料</span>
+                                    <span>半干喷补料</span>
+                                    <span>空压密封料</span>
+                                    <span>焦炉砌筑料</span>
+                                    <span>灌浆料</span>
+                                    <span>高温抹补料</span>
+                                    <span>高温粘结剂</span>
+                                </div>
+                                <div class="materialDetail" onMouseover={changeMouseover} onMouseout={changeMouseout}>
+                                    <div class="topImg">
+                                        <img src={topImgSrc.value.src} alt="" />
+                                        <p class="title">{topImgSrc.value.title}</p>
+                                        <div class={!isShowNavigationBtn.value ? 'noneBtn' : 'navigationBtn'}>
+                                            <div class="prev" onClick={() => changePrev(topImgSrc.value.src)}>{'<'}</div>
+                                            <div class="next" onClick={() => changeNext(topImgSrc.value.src)}>{'>'}</div>
+                                        </div>
+                                    </div>
+                                    <div class="bottomImg">
+                                        {
+                                            cokeOvenmaintenance && cokeOvenmaintenance.value.map(item => {
+                                                return <img src={item.src} alt="" class={(topImgSrc.value.src === item.src) ? 'actived' : ''} onClick={() => changeImg(item, '1')} />
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner">
+                                <img src={banner} alt="" />
+                                <div class="text">
+                                    <b>优异品质 合理的价格 完善的售后</b>
+                                    <span>√ 服务安全 &nbsp; &nbsp; √ 方案优惠 &nbsp; &nbsp; √ 管理严格 &nbsp; &nbsp; √ 施工安全</span>
+                                </div>
+                            </div>
+                            <div class="refractoryBricksList">
+                                <div class="refractoryBricksTab">
+                                    <span>耐火砖Refractory bricks(1)</span>
+                                    <span>耐火砖2000℃以上</span>
+                                    <span>耐火砖1770℃</span>
+                                    <span>耐火砖1580℃</span>
+                                    <span>轻质耐火砖</span>
+                                    <span>粘土耐火砖</span>
+                                    <span>高铝耐火砖</span>
+                                </div>
+                                <div class="refractoryBricksImgs">
                                     {
-                                        cokeOvenmaintenance && cokeOvenmaintenance.value.map(item => {
-                                            return <img src={item.src} alt="" class={(topImgSrc.value.src === item.src) ? 'actived' : ''} onClick={() => changeImg(item, '1')} />
+                                        refractoryBricks && refractoryBricks.value.map(item => {
+                                            return <div class="imgList">
+                                                <img src={item.src} alt="" />
+                                                <span>{item.title}</span>
+                                                <img class="search" src={search} alt="" onClick={() => showImgDialog(item)} />
+                                            </div>
                                         })
                                     }
                                 </div>
                             </div>
-                        </div>
-                        <div class="banner">
-                            <img src={banner} alt="" />
-                            <div class="text">
-                                <b>优异品质 合理的价格 完善的售后</b>
-                                <span>√ 服务安全 &nbsp; &nbsp; √ 方案优惠 &nbsp; &nbsp; √ 管理严格 &nbsp; &nbsp; √ 施工安全</span>
-                            </div>
-                        </div>
-                        <div class="refractoryBricksList">
-                            <div class="refractoryBricksTab">
-                                <span>耐火砖Refractory bricks(1)</span>
-                                <span>耐火砖2000℃以上</span>
-                                <span>耐火砖1770℃</span>
-                                <span>耐火砖1580℃</span>
-                                <span>轻质耐火砖</span>
-                                <span>粘土耐火砖</span>
-                                <span>高铝耐火砖</span>
-                            </div>
-                            <div class="refractoryBricksImgs">
-                                {
-                                    refractoryBricks && refractoryBricks.value.map(item => {
-                                        return <div class="imgList">
-                                            <img src={item.src} alt="" />
-                                            <span>{item.title}</span>
-                                            <img class="search" src={search} alt="" onClick={() => showImgDialog(item)} />
-                                        </div>
-                                    })
-                                }
-                            </div>
-                        </div>
-                        <div class="castableMaterialList">
-                            <div class="castableMaterialTab">
-                                <span>浇注料Castable</span>
-                                <span>建材行业用浇注料</span>
-                                <span>石化行业用浇注料</span>
-                                <span>冶金行业用浇注料</span>
-                                <span>有色金属行业用浇注料</span>
-                            </div>
-                            <div class="castableMaterialImgs">
-                                {
-                                    castableMaterial && castableMaterial.value.map(item => {
-                                        return <div class="imgList">
-                                            <img src={item.src} alt="" />
-                                            <span>{item.title}</span>
-                                            <img class="search" src={search} alt="" onClick={() => showImgDialog(item)} />
-                                        </div>
-                                    })
-                                }
-                            </div>
-                        </div>
-                        <div class="mask"></div>
-                        <div class="imgDialog">
-                            <div class="topImg">
-                                <span class="close" onClick={() => hideImgDialog()}>X</span>
-                                <img src={activedImgSrc.value.src} alt="" />
-                                <div class="imgDetail">
-                                    <p class="title">{activedImgSrc.value.title}</p>
-                                    <p>
-                                        <span>规&emsp;&emsp;格&emsp;&nbsp;：</span>
-                                        <span class="highlight">国际合格标准</span>
-                                    </p>
-                                    <p>
-                                        <span>材&emsp;&emsp;质&emsp;&nbsp;：</span>
-                                        <span class="highlight">建筑材料</span>
-                                    </p>
-                                    <p>
-                                        <span>型&emsp;&emsp;号&emsp;&nbsp;：</span>
-                                        <span class="highlight">KB1874</span>
-                                    </p>
-                                    <p>
-                                        <span>价&emsp;&emsp;格&emsp;&nbsp;</span>
-                                        <span class="highlight price">￥ 36.60</span>
-                                    </p>
+                            <div class="castableMaterialList">
+                                <div class="castableMaterialTab">
+                                    <span>浇注料Castable</span>
+                                    <span>建材行业用浇注料</span>
+                                    <span>石化行业用浇注料</span>
+                                    <span>冶金行业用浇注料</span>
+                                    <span>有色金属行业用浇注料</span>
                                 </div>
-                            </div>
-                            <div class="bottomImg">
-                                {
-                                    activedImgSrc.value.src.includes('nhz') ? refractoryBricks.value.map(item => {
-                                        return <img src={item.src} alt="" onClick={() => changeImg(item, '2')} />
-                                    }) :
-                                        castableMaterial.value.map(item => {
-                                            return <img src={item.src} alt="" onClick={() => changeImg(item, '2')} />
+                                <div class="castableMaterialImgs">
+                                    {
+                                        castableMaterial && castableMaterial.value.map(item => {
+                                            return <div class="imgList">
+                                                <img src={item.src} alt="" />
+                                                <span>{item.title}</span>
+                                                <img class="search" src={search} alt="" onClick={() => showImgDialog(item)} />
+                                            </div>
                                         })
-                                }
-                            </div>
-                            <div class="navigationBtn">
-                                <div class="prev" onClick={() => changePrev(activedImgSrc.value.src)}>
-                                    <el-icon><ArrowLeftBold /></el-icon>
+                                    }
                                 </div>
-                                <div class="next" onClick={() => changeNext(activedImgSrc.value.src)}>
-                                    <el-icon><ArrowRightBold /></el-icon>
+                            </div>
+                            <div class="maintenance">
+                                <p class="title">焦炉维修照片</p>
+                                <div class="listImgs">
+                                    <p>列表多图</p>
+                                </div>
+                            </div>
+                            <div class="advantage">
+                                <div class="content">
+                                    <p class="title">
+                                        <span>选择我们的&nbsp;<span class="num">4</span>&nbsp;大优势</span>
+                                    </p>
+                                    <p class="advantagemsg">
+                                        <span>1、我们拥有先进的理念，科学的管理</span>
+                                        <span>不断地致力于质量管理、过程管理及成本管理，苦练内功，并坚持科技兴厂，以质量和信誉取胜，以不断为广大客户提供优质产品和服务为己任，提供技术指导服务！</span>
+                                    </p>
+                                    <p class="advantagemsg">
+                                        <span>2、公司实力雄厚 质量有保证</span>
+                                        <span>具有丰富的生产实践经验，技术力量雄厚、生产工艺先进可根据市场调研及客户提出的技术要求进行新产品研制开发并与有关科研部门合作，承揽一些新产品开发任务。</span>
+                                    </p>
+                                    <p class="advantagemsg">
+                                        <span>3、厂家直销，快速交货，性价比高</span>
+                                        <span>公司位于交通便利的城市，公司从业人员近百人，其中技术人员占25%，年生产能力可达到上万吨。</span>
+                                    </p>
+                                    <p class="advantagemsg">
+                                        <span>4、全方位服务</span>
+                                        <span>本公司销售服务体系，售前、售中、售后服务都由专人来完成，及时地排除客户的后顾之忧。</span>
+                                    </p>
+                                    <img src="" alt="" />
+                                </div>
+                            </div>
+                            <div class="mask"></div>
+                            <div class="imgDialog">
+                                <div class="topImg">
+                                    <span class="close" onClick={() => hideImgDialog()}>X</span>
+                                    <img src={activedImgSrc.value.src} alt="" />
+                                    <div class="imgDetail">
+                                        <p class="title">{activedImgSrc.value.title}</p>
+                                        <p>
+                                            <span>规&emsp;&emsp;格&emsp;&nbsp;：</span>
+                                            <span class="highlight">国际合格标准</span>
+                                        </p>
+                                        <p>
+                                            <span>材&emsp;&emsp;质&emsp;&nbsp;：</span>
+                                            <span class="highlight">建筑材料</span>
+                                        </p>
+                                        <p>
+                                            <span>型&emsp;&emsp;号&emsp;&nbsp;：</span>
+                                            <span class="highlight">KB1874</span>
+                                        </p>
+                                        <p>
+                                            <span>价&emsp;&emsp;格&emsp;&nbsp;</span>
+                                            <span class="highlight price">￥ 36.60</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="bottomImg">
+                                    {
+                                        activedImgSrc.value.src.includes('nhz') ? refractoryBricks.value.map(item => {
+                                            return <img src={item.src} alt="" onClick={() => changeImg(item, '2')} />
+                                        }) :
+                                            castableMaterial.value.map(item => {
+                                                return <img src={item.src} alt="" onClick={() => changeImg(item, '2')} />
+                                            })
+                                    }
+                                </div>
+                                <div class="navigationBtn">
+                                    <div class="prev" onClick={() => changePrev(activedImgSrc.value.src)}>
+                                        <el-icon><ArrowLeftBold /></el-icon>
+                                    </div>
+                                    <div class="next" onClick={() => changeNext(activedImgSrc.value.src)}>
+                                        <el-icon><ArrowRightBold /></el-icon>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </el-container>
-        </el-container >
+                </el-container>
+            </el-container >
         )
     }
 })
