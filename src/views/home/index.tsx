@@ -200,7 +200,7 @@ export default defineComponent({
         // 在组件挂载时初始化 Swiper
         onMounted(() => {
             const scrollContainer = document.querySelector('.el-container .el-container');
-            scrollTopPx.value = scrollContainer?.clientHeight - 944
+            scrollTopPx.value = scrollContainer ? scrollContainer.clientHeight - 944 : 0
             console.log(scrollTopPx.value)
             console.log("Scrolling event triggered!", scrollContainer);
             scrollContainer?.addEventListener("scroll", (event) => {
