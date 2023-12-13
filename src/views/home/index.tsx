@@ -42,6 +42,10 @@ import jzl4 from "@/assets/jzl4.png";
 import jzl5 from "@/assets/jzl5.png";
 import jzl6 from "@/assets/jzl6.png";
 import search from "@/assets/search.png";
+import advantage1 from "@/assets/advantage1.png";
+import advantage2 from "@/assets/advantage2.png";
+import advantage3 from "@/assets/advantage3.png";
+import advantage4 from "@/assets/advantage4.png";
 import { nextTick, onMounted } from 'vue';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper } from 'swiper';
@@ -405,20 +409,50 @@ export default defineComponent({
                                     <p class="advantagemsg">
                                         <span>1、我们拥有先进的理念，科学的管理</span>
                                         <span>不断地致力于质量管理、过程管理及成本管理，苦练内功，并坚持科技兴厂，以质量和信誉取胜，以不断为广大客户提供优质产品和服务为己任，提供技术指导服务！</span>
+                                        <img class="advantageImg1" src={advantage1} alt="" />
                                     </p>
                                     <p class="advantagemsg">
                                         <span>2、公司实力雄厚 质量有保证</span>
                                         <span>具有丰富的生产实践经验，技术力量雄厚、生产工艺先进可根据市场调研及客户提出的技术要求进行新产品研制开发并与有关科研部门合作，承揽一些新产品开发任务。</span>
+                                        <img class="advantageImg2" src={advantage2} alt="" />
                                     </p>
                                     <p class="advantagemsg">
                                         <span>3、厂家直销，快速交货，性价比高</span>
                                         <span>公司位于交通便利的城市，公司从业人员近百人，其中技术人员占25%，年生产能力可达到上万吨。</span>
+                                        <img class="advantageImg3" src={advantage3} alt="" />
                                     </p>
                                     <p class="advantagemsg">
                                         <span>4、全方位服务</span>
                                         <span>本公司销售服务体系，售前、售中、售后服务都由专人来完成，及时地排除客户的后顾之忧。</span>
+                                        <img class="advantageImg4" src={advantage4} alt="" />
                                     </p>
-                                    <img src="" alt="" />
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <div class="content">
+                                    <div class="top">
+                                        <div class="left">
+                                            <p class="design"><span>Construction Material</span><span>Design</span></p>
+                                            <p class="details">主营产品有焦炉维修材料、高铝砖、粘土砖、轻质保温砖、耐磨浇注料、刚玉浇注料、低水泥高强浇注料、防渗料、自流料、可塑料、及各种牌号耐火水泥的材料。</p>
+                                        </div>
+                                        <div class="right">
+                                            <p>联系传真：020-00000000</p>
+                                            <p>联系QQ：177488228&emsp;&emsp;&emsp;&emsp;&emsp;联系邮箱：xxx@.co.m</p>
+                                            <p>联系电话：000-000000&emsp;&emsp;&emsp;&emsp;&emsp;联系地址：XXX省XXX市XXX县XXX路XXX号</p>
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <p>
+                                            <font>技术支持：</font>
+                                            <span><a class="J_supportLink" href="http://www.xmsq6.cn/" target="_blank">乔拓云建站</a></span>
+                                            <span>&nbsp;|&nbsp;</span>
+                                            <span>手机版</span>
+                                            <span>&nbsp;|&nbsp;</span>
+                                            <span>管理登录</span>
+                                            <span>&nbsp;|&nbsp;</span>
+                                            <span><a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow">闽ICP备2022002968号-2</a></span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="mask"></div>
