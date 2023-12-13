@@ -62,6 +62,7 @@ export default defineComponent({
         const router = useRouter();
         let meta = ref({});
         let verUpdate: any = ref(false);
+        let scrollTopPx = ref(0)
         // 焦炉维修材料小图
         const cokeOvenmaintenance = ref([
             {
@@ -192,8 +193,22 @@ export default defineComponent({
             verUpdate.value = await versionUpdated();
         }
 
+        const scrolling = () => {
+            console.log(window.scrollY, '123')
+        }
+
         // 在组件挂载时初始化 Swiper
         onMounted(() => {
+            const scrollContainer = document.querySelector('.el-container .el-container');
+            scrollTopPx.value = scrollContainer?.clientHeight - 944
+            console.log(scrollTopPx.value)
+            console.log("Scrolling event triggered!", scrollContainer);
+            scrollContainer?.addEventListener("scroll", (event) => {
+                    // console.log("Scrolling event triggered!", scrollContainer.scrollTop);
+                    if(scrollContainer.scrollTop < scrollTopPx.value) return
+                    scrollTopPx.value = scrollContainer.scrollTop
+            });
+           
             // 这里的 swiperOptions 是 Swiper 的配置选项，根据你的需求进行配置
             const swiperOptions = {
                 loop: true,
@@ -208,6 +223,7 @@ export default defineComponent({
             };
 
             swiperInstance.value = new Swiper('.banner_top', swiperOptions);
+            
         });
         // 点击切换图片
         const changeImg = (itemImg: any, type: string) => {
@@ -299,9 +315,9 @@ export default defineComponent({
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide first">
                                         <div class={'text'}>
-                                            <p>品质保证 诚信经营 专业定制</p>
-                                            <img src={nh} alt="" />
-                                            <p>细心服务 厂家直销 贴心售后</p>
+                                            <p class={'animation'}>品质保证 诚信经营 专业定制</p>
+                                            <img class={'animation'} src={nh} alt="" />
+                                            <p class={'animation'}>细心服务 厂家直销 贴心售后</p>
                                         </div>
                                     </div>
                                     <div class="swiper-slide two">
@@ -317,7 +333,7 @@ export default defineComponent({
                                 <div class="swiper-button-prev btn_banner"></div>
                             </div>
                             <div class="materialList">
-                                <div class="materialTab">
+                                <div class={scrollTopPx.value > 215 ? 'animation materialTab' : 'materialTab'} >
                                     <span>焦炉维修材料</span>
                                     <span>陶瓷焊补料</span>
                                     <span>半干喷补料</span>
@@ -327,13 +343,13 @@ export default defineComponent({
                                     <span>高温抹补料</span>
                                     <span>高温粘结剂</span>
                                 </div>
-                                <div class="materialDetail" onMouseover={changeMouseover} onMouseout={changeMouseout}>
+                                <div class={scrollTopPx.value > 215 ? 'animation materialDetail' : 'materialDetail'} onMouseover={changeMouseover} onMouseout={changeMouseout}>
                                     <div class="topImg">
                                         <img src={topImgSrc.value.src} alt="" />
                                         <p class="title">{topImgSrc.value.title}</p>
                                         <div class={!isShowNavigationBtn.value ? 'noneBtn' : 'navigationBtn'}>
-                                            <div class="prev" onClick={() => changePrev(topImgSrc.value.src)}>{'<'}</div>
-                                            <div class="next" onClick={() => changeNext(topImgSrc.value.src)}>{'>'}</div>
+                                            <div class="prev" onClick={() => changePrev(topImgSrc.value.src)}> <el-icon><ArrowLeftBold /></el-icon></div>
+                                            <div class="next" onClick={() => changeNext(topImgSrc.value.src)}> <el-icon><ArrowRightBold /></el-icon> </div>
                                         </div>
                                     </div>
                                     <div class="bottomImg">
@@ -347,13 +363,13 @@ export default defineComponent({
                             </div>
                             <div class="banner">
                                 <img src={banner} alt="" />
-                                <div class="text">
-                                    <b>优异品质 合理的价格 完善的售后</b>
-                                    <span>√ 服务安全 &nbsp; &nbsp; √ 方案优惠 &nbsp; &nbsp; √ 管理严格 &nbsp; &nbsp; √ 施工安全</span>
+                                <div class={scrollTopPx.value > 677 ? 'animation text' : 'text'}>
+                                    <b  >优异品质 合理的价格 完善的售后</b>
+                                    <span >√ 服务安全 &nbsp; &nbsp; √ 方案优惠 &nbsp; &nbsp; √ 管理严格 &nbsp; &nbsp; √ 施工安全</span>
                                 </div>
                             </div>
                             <div class="refractoryBricksList">
-                                <div class="refractoryBricksTab">
+                                <div class={scrollTopPx.value > 944 ? 'animation refractoryBricksTab' : 'refractoryBricksTab'}>
                                     <span>耐火砖Refractory bricks(1)</span>
                                     <span>耐火砖2000℃以上</span>
                                     <span>耐火砖1770℃</span>
@@ -362,7 +378,7 @@ export default defineComponent({
                                     <span>粘土耐火砖</span>
                                     <span>高铝耐火砖</span>
                                 </div>
-                                <div class="refractoryBricksImgs">
+                                <div class={scrollTopPx.value > 1000 ? 'animation refractoryBricksImgs' : 'refractoryBricksImgs'}>
                                     {
                                         refractoryBricks && refractoryBricks.value.map(item => {
                                             return <div class="imgList">
@@ -375,14 +391,14 @@ export default defineComponent({
                                 </div>
                             </div>
                             <div class="castableMaterialList">
-                                <div class="castableMaterialTab">
+                                <div  class={scrollTopPx.value > 1800 ? 'animation castableMaterialTab' : 'castableMaterialTab'}>
                                     <span>浇注料Castable</span>
                                     <span>建材行业用浇注料</span>
                                     <span>石化行业用浇注料</span>
                                     <span>冶金行业用浇注料</span>
                                     <span>有色金属行业用浇注料</span>
                                 </div>
-                                <div class="castableMaterialImgs">
+                                <div class={scrollTopPx.value > 1800 ? 'animation castableMaterialImgs' : 'castableMaterialImgs'}>
                                     {
                                         castableMaterial && castableMaterial.value.map(item => {
                                             return <div class="imgList">
@@ -395,7 +411,7 @@ export default defineComponent({
                                 </div>
                             </div>
                             <div class="maintenance">
-                                <p class="title">焦炉维修照片</p>
+                                <p class={scrollTopPx.value > 2311 ? 'animation title' : 'title'}>焦炉维修照片</p>
                                 <div class="listImgs">
                                     <p>列表多图</p>
                                 </div>
@@ -403,25 +419,25 @@ export default defineComponent({
                             </div>
                             <div class="advantage">
                                 <div class="content">
-                                    <p class="title">
+                                    <p class={scrollTopPx.value > 2716 ? 'animation title' : 'title'}>
                                         <span>选择我们的&nbsp;<span class="num">4</span>&nbsp;大优势</span>
                                     </p>
-                                    <p class="advantagemsg">
+                                    <p  class={scrollTopPx.value > 2963 ? 'animation advantagemsg' : 'advantagemsg'}>
                                         <span>1、我们拥有先进的理念，科学的管理</span>
                                         <span>不断地致力于质量管理、过程管理及成本管理，苦练内功，并坚持科技兴厂，以质量和信誉取胜，以不断为广大客户提供优质产品和服务为己任，提供技术指导服务！</span>
                                         <img class="advantageImg1" src={advantage1} alt="" />
                                     </p>
-                                    <p class="advantagemsg">
+                                    <p class={scrollTopPx.value > 2963 ? 'animation advantagemsg' : 'advantagemsg'}>
                                         <span>2、公司实力雄厚 质量有保证</span>
                                         <span>具有丰富的生产实践经验，技术力量雄厚、生产工艺先进可根据市场调研及客户提出的技术要求进行新产品研制开发并与有关科研部门合作，承揽一些新产品开发任务。</span>
                                         <img class="advantageImg2" src={advantage2} alt="" />
                                     </p>
-                                    <p class="advantagemsg">
+                                    <p class={scrollTopPx.value > 3200 ? 'animation advantagemsg' : 'advantagemsg'}>
                                         <span>3、厂家直销，快速交货，性价比高</span>
                                         <span>公司位于交通便利的城市，公司从业人员近百人，其中技术人员占25%，年生产能力可达到上万吨。</span>
                                         <img class="advantageImg3" src={advantage3} alt="" />
                                     </p>
-                                    <p class="advantagemsg">
+                                    <p class={scrollTopPx.value > 3228 ? 'animation advantagemsg' : 'advantagemsg'}>
                                         <span>4、全方位服务</span>
                                         <span>本公司销售服务体系，售前、售中、售后服务都由专人来完成，及时地排除客户的后顾之忧。</span>
                                         <img class="advantageImg4" src={advantage4} alt="" />

@@ -16,6 +16,23 @@
   padding:8px 10px;
 
 }
+*{
+  outline: none;
+  font-style: normal;
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animation {
+  animation: scaleAnimation .5s ease-in-out forwards !important;
+}
+
 .el-container{
   width: 100%;
   height: 100vh;
@@ -88,7 +105,7 @@
               background-color: transparent;
               position: absolute;
               top: 227px;
-              left: 198px
+              left: 198px;
             }
             p:nth-of-type(2) {
               top:480px;
@@ -215,6 +232,12 @@
       display: flex;
       margin: 12px auto;
       cursor: pointer;
+      .materialTab{
+        transform: scale(0);
+      }
+      .refractoryBricksTab {
+        transform: scale(0);
+      }
       .materialTab, .refractoryBricksTab, .castableMaterialTab{
         width: 242px;
         display: flex;
@@ -244,6 +267,7 @@
       .materialDetail {
         flex: 1;
         position: relative;
+        transform: scale(0);
         .topImg {
           display: flex;
           margin-bottom: 8px;
@@ -258,11 +282,15 @@
           .navigationBtn {
             font-size: 50px;
             color: #ccc;
+            i {
+              font-size: 50px;
+            }
             .prev {
               position: absolute;
               top: 50%;
               left: -34px;
               margin-top: -56px;
+              
             }
             .next {
               position: absolute;
@@ -289,7 +317,7 @@
     .banner {
       color: rgb(255, 255, 255);
       background-color: transparent;
-      margin-top: 320px;
+      margin-top: 200px;
       margin-bottom: 20px;
       position: relative;
       .text {
@@ -301,6 +329,7 @@
         left: 50%;
         top: 20%;
         margin-left: -600px;
+        transform: scale(0);
           b {
             font-size: 36px;
             margin-bottom: 20px;
@@ -319,6 +348,7 @@
     .refractoryBricksImgs, .castableMaterialImgs{
       display: flex;
       flex-wrap: wrap;
+      transform: scale(0);
       flex: 1;
       .imgList {
         display: flex;
@@ -353,6 +383,7 @@
     }
     .castableMaterialTab {
       height: 236px;
+      transform: scale(0);
     }
     .maintenance {
       width: 1200px;
@@ -404,6 +435,7 @@
           height: auto;
           animation: auto ease 0s 1 normal none running none;
           position: relative;
+          transform: scale(0);
           span:nth-child(1) {
             font-size: 18px;
             color: #1e50ae;
