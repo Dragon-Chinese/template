@@ -33,7 +33,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: "localhost",
+    host: "192.168.10.104",
     open: true,
     port: 3000,
     hmr: { overlay: false },
