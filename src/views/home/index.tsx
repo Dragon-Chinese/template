@@ -49,7 +49,7 @@ import advantage4 from "@/assets/advantage4.png";
 import { nextTick, onMounted } from 'vue';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper } from 'swiper';
-import Long from './components/swiper_long.tsx'
+import Long from './components/swiper_long'
 Swiper.use([Autoplay, Navigation]);
 // 安装 Swiper 模块
 

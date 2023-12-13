@@ -22,7 +22,7 @@ Swiper.use([Autoplay]);
  */
 
 export default defineComponent({
-    name: 'nav',
+    name: 'Long',
     setup() {
         const swiperInstance = ref();
         const list = ref([
