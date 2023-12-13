@@ -45,6 +45,7 @@ import search from "@/assets/search.png";
 import { nextTick, onMounted } from 'vue';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper } from 'swiper';
+import Long from './components/swiper_long.tsx'
 Swiper.use([Autoplay, Navigation]);
 // 安装 Swiper 模块
 
@@ -202,7 +203,7 @@ export default defineComponent({
                 }
             };
 
-            swiperInstance.value = new Swiper('.swiper-container', swiperOptions);
+            swiperInstance.value = new Swiper('.banner_top', swiperOptions);
         });
         // 点击切换图片
         const changeImg = (itemImg: any, type: string) => {
@@ -394,6 +395,7 @@ export default defineComponent({
                                 <div class="listImgs">
                                     <p>列表多图</p>
                                 </div>
+                                <Long />
                             </div>
                             <div class="advantage">
                                 <div class="content">

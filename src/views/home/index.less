@@ -22,6 +22,27 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  .long {
+    width: 1200px;
+    overflow: hidden;
+    .swiper-wrapper {
+      /* 这里是改变其动画效果为匀速形式，不加此样式的话会造成滚动卡顿，看起来效果不平滑 */
+      /* 样式做了各种浏览器的兼容 */
+      transition-timing-function: linear !important;
+      -webkit-transition-timing-function: linear !important;
+      -moz-transition-timing-function: linear !important;
+      -ms-transition-timing-function: linear !important;
+      -o-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+    }
+    .swiper-slide {
+      // width: 230px !important;
+      // padding: 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
   .banner_top {
     height: 800px;
     position: relative;
@@ -339,11 +360,23 @@
       margin: 60px auto 20px auto;
       display: flex;
       flex-direction: column;
+      
       .title {
         height: 40px;
         font-size: 24px;
         color: #1e50ae;
         text-align: center;
+      }
+      .listImgs {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+        height: 48px;
+        p {
+          color:#1e50ae;
+          font-size: 16px;
+          border-left: 6px solid #1e50ae;
+          padding-left: 10px;
+        }
       }
     }
     .advantage {
