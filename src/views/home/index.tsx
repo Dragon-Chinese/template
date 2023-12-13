@@ -458,9 +458,9 @@ export default defineComponent({
                                             <p class="details">主营产品有焦炉维修材料、高铝砖、粘土砖、轻质保温砖、耐磨浇注料、刚玉浇注料、低水泥高强浇注料、防渗料、自流料、可塑料、及各种牌号耐火水泥的材料。</p>
                                         </div>
                                         <div class="right">
-                                            <p>联系传真：020-00000000</p>
-                                            <p>联系QQ：177488228&emsp;&emsp;&emsp;&emsp;&emsp;联系邮箱：xxx@.co.m</p>
-                                            <p>联系电话：000-000000&emsp;&emsp;&emsp;&emsp;&emsp;联系地址：XXX省XXX市XXX县XXX路XXX号</p>
+                                            <p>联系微信：15513573111</p>
+                                            <p>联系QQ：1054512633&emsp;&emsp;&emsp;&emsp;&emsp;联系邮箱：1054512633@qq.com </p>
+                                            <p>联系电话：15333071118 &emsp;&emsp;&emsp;&emsp;&emsp;联系地址：山西省临汾市尧都区金殿镇官磑村向里100米</p>
                                         </div>
                                     </div>
                                     <div class="bottom">
